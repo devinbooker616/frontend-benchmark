@@ -9,18 +9,20 @@
 </head>
 
 <body>
-    <form action="{% url 'create_entry' %}" method="POST">
+    <form action="{% url 'latest_entries' %}" method="POST" id="forms">
     {% csrf_token %}
     <label>
         Title
-       <input name="title" id="name" type="text"> 
+       <input name="content" id="name" type="textarea"> 
     </label>
     <button>Submit</button>
-    {% for entries in create_entry  %}
-        {{entries.title}}    
-    {% endfor %}
     </form>
 
+{% for entry in entries  %}
+    <ul>
+    <li>{{entry.content}}</li>
+    </ul>  
+{% endfor %}
     
 </body>
 
