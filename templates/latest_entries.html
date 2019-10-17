@@ -15,7 +15,9 @@
     <a href="{% url 'create_entry' %}">
         <button> Click here to create a new entry</button>
     </a>
-
+    <a href="{% url 'top_entries' %}">
+        <button> If you want to order from most likes to none click here</button>
+    </a>
 
     {% for entry in entries  %}
     {% csrf_token %}
