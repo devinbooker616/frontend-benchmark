@@ -21,10 +21,13 @@
             {{entry.content}}
         </li>
     </ul>
-
-    <form action="{% url 'like_entry' entry.id %}" method="POST">
+    
+    <form action="{% url 'like_entry' entry.id %}" method="POST" id="id">  
+        <label for="id">
         {% csrf_token %}
-        <button>👍 {{entry.likes}}</button>
+        <button>👍</button>
+        {{entry.likes}}
+        </label> 
     </form>
     {% endfor %}
 </body>
