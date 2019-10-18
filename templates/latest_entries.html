@@ -20,25 +20,27 @@
     <a href="{% url 'top_entries' %}">
         <button class="button2"> If you want to order from most likes to none click here</button>
     </a>
+    <ul id="main">
     {% for entry in entries  %}
     {% csrf_token %}
     
-    <ul id="main">
+    
         
-    <li id="Sub">
+        <li id="Sub">
+
+            <div id="id">
+                {{entry.id}}
+            </div>
             <div>
             {{entry.content}}
             </div>
     
-            <div id="id">
-            {{entry.id}}
-            </div>
-            <button id="likes">
-                👍<p id="numOfLikes">{{entry.likes}}</p>
-            </button>
-            </div>
+        
+        <button id="likes">👍
+        <h3 id="numOfLikes">{{entry.likes}}</h3>
+        </button>
    
-    </li>
+        </li>
     {% endfor %}
     </ul>
 </body>

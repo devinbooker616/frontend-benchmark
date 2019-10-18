@@ -9,9 +9,7 @@ for (const subs of sub) {
     const numOfLikes = like.querySelector("#numOfLikes")
 
     like.addEventListener("click", () => {
-        console.log("yay")
         const url = `/entries/${divs.textContent.trim()}/like`;
-        console.log("yay")
         fetch(url, { method: 'post' })
             .then(response => response.json())
             .then((data) => {
