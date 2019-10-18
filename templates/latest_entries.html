@@ -9,17 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
      <script src="{% static "likes.js" %}" defer></script>
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href={% static "base.css" %}>
 </head>
 
-<body>
+<div id="container">
+<body id="body">
     <a href="{% url 'create_entry' %}">
-        <button> Click here to create a new entry</button>
+        <button class="button1"> Click here to create a new entry</button>
     </a>
     <a href="{% url 'top_entries' %}">
-        <button> If you want to order from most likes to none click here</button>
+        <button class="button2"> If you want to order from most likes to none click here</button>
     </a>
-
     {% for entry in entries  %}
     {% csrf_token %}
     <ul>
@@ -27,8 +27,11 @@
             {{entry.content}}
         </li>
     </ul>
+    </div>
+    <div id="id">
     <button id="likes">👍</button>
+   
     {% endfor %}
 </body>
-
+</div>
 </html>
