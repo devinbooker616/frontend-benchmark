@@ -12,26 +12,36 @@
     <link rel="stylesheet" href={% static "base.css" %}>
 </head>
 
-<div id="container">
-<body id="body">
+
+<body>
+    <div>
     <a href="{% url 'create_entry' %}">
         <button class="button1"> Click here to create a new entry</button>
     </a>
     <a href="{% url 'top_entries' %}">
         <button class="button2"> If you want to order from most likes to none click here</button>
     </a>
-    {% for entry in entries  %}
-    {% csrf_token %}
-    <ul>
-        <li>
-            {{entry.content}}
-        </li>
-    </ul>
     </div>
-    <div id="id">
-    <button id="likes">👍</button>
+    <ul id="main">
+    {% for entry in entries  %}
+    
+        
+    <li id="Sub">
+            <div id="id">
+                {{entry.id}}
+            </div>
+
+            <div>
+            {{entry.content}}
+            </div>
+    
+            <button id="likes">
+                👍<p id="numOfLikes">{{entry.likes}}</p>
+            </button> 
    
+    </li>
     {% endfor %}
+    </ul>
 </body>
 </div>
 </html>
