@@ -28,13 +28,8 @@
 }
 
 #likes {
+    background: 10%;
+    margin-right: 98%;
     color: rgba(2, 178, 254, 0.988)
 }
 
-#container {
-    width: 50%;
-    height: 50%;
-    display: flex;
-    border: 50%;
-    border-color: rgba(2, 178, 254, 0.988);
-}
